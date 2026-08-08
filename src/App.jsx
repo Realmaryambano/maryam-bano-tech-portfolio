@@ -800,27 +800,47 @@ export default function Portfolio() {
               </Reveal>
               <Reveal delay={160} className="about__facts">
                 <div className="fact"><MapPin size={15} /><span>Based in Karachi, Pakistan</span></div>
-                <div className="fact"><Code2 size={15} /><span>Python · Flask · Sciki · Next.js · React</span></div>
+                <div className="fact"><Code2 size={15} /><span>Python · Flask · Scikit-learn · TensorFlow · Next.js · React</span></div>
                 <div className="fact"><Sparkles size={15} /><span>97.25% — Generative AI Top Performer</span></div>
               </Reveal>
             </div>
             <Reveal delay={120} className="about__body">
-              <p>
-                I'm a Computer Science undergrad at Bahria University, Karachi, currently
-                interning at Bonanza Satrangi — where I build internal tools that turn
-                spreadsheets and paper trails into dashboards and searchable systems.
-              </p>
-              <p>
-                Outside of that, I freelance. I've built full e-commerce platforms solo: product
-                catalogs, cart flows, checkout, automated invoicing, email notifications — the
-                whole stack. I like Python, I like plants (ask me about Mariame), and I like
-                teaching machines to notice patterns I'd otherwise miss.
-              </p>
-              <p>
-                Somewhere in the mix I picked up a 97.25% Top Performer score in a Generative AI
-                cohort, wrangled Oracle databases into behaving, and still find time for the
-                occasional Model UN debate.
-              </p>
+<p>
+  Hi, I’m Maryam Bano — a Full-Stack Developer, AI/ML enthusiast, and creative
+  technologist passionate about turning ideas into modern, meaningful, and
+  visually engaging digital experiences. I enjoy combining technology with
+  creativity to build solutions that are not only functional, but also intuitive
+  and memorable.
+</p>
+
+<p>
+  I’ve built 50+ websites and applications. My work ranges from full-stack
+  platforms and enterprise systems to data-driven applications, automation,
+  and AI/ML projects. I’m currently focusing on expanding my expertise in
+  Data Science, Artificial Intelligence, and Machine Learning.
+</p>
+
+<p>
+  Technology, however, is only one side of me. I’m also a novelist, writer,
+  YouTuber, video editor, graphic designer, and vlogger. I love exploring
+  different forms of art and creativity.
+</p>
+
+<p>
+  I hold a Bachelor’s degree in Computer Science from Bahria University Karachi,
+  following my intermediate studies in Computer Science at Bahria College
+  Karachi, where I was among the top scorers in my department. Along the way,
+  I’ve continued learning through certifications, courses, competitions,
+  hackathons, internships, and hands-on projects.
+</p>
+
+<p>
+  I also enjoy sharing what I learn. With a community of 3,000+ LinkedIn
+  followers, I regularly share knowledge, experiences, opportunities, and
+  lessons from my journey to help and inspire others in tech.
+</p>
+
+
               <div className="about__gallery">
                 <ImageOrPlaceholder
                   src={IMAGES.aboutWork1}
