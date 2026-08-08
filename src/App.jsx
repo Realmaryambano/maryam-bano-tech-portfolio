@@ -12,15 +12,37 @@ import { FaGithub, FaLinkedin, FaYoutube } from "react-icons/fa";
 /* DATA                                                                    */
 /* ---------------------------------------------------------------------- */
 /*
-  HOW TO ADD YOUR LIVE DEMO LINKS AND SCREENSHOTS
+  IMAGES
   -------------------------------------------------
-  Every project below has `demoUrl` and `image` fields, left empty ("") for
-  now since I don't have the real links or screenshots.
-    - demoUrl: paste the hosted link and the "Live Demo" button lights up.
-    - image: paste an image URL (or import a local file and use that
-      variable) and it replaces the placeholder tile on the card + modal.
-  No other code changes needed either way.
+  All images below point to files inside an "images" folder that sits
+  alongside this component (e.g. /public/images/... in Next.js, or
+  src/images/... if you're importing them as modules — just swap the
+  string paths for your real imports/paths).
+
+  Folder structure assumed:
+    images/
+      hero-photo.jpg
+      about-photo.jpg
+      about-work-1.jpg
+      about-work-2.jpg
+      projects/
+        mariame.jpg
+        analytics.jpg
+        student.jpg
+        payroll.jpg
+        boutique.jpg
+        bu-clone.jpg
+
+  Replace any of these paths with your real filenames whenever you have
+  the actual assets — no other code changes needed.
 */
+
+const IMAGES = {
+  heroPhoto: "images/her-photo.png",
+  aboutPhoto: "images/hero-photo.png",
+  aboutWork1: "images/working_at_office 1.png",
+  aboutWork2: "images/about-work-2.png",
+};
 
 const NAV_ITEMS = [
   { id: "home", label: "Home" },
@@ -55,7 +77,7 @@ const PROJECTS = [
     highlight: "Live on Vercel with a dark, responsive UI",
     demoUrl: "",
     githubUrl: "https://github.com/Realmaryambano",
-    image: "",
+    image: "images/projects/mariame.jpg",
   },
   {
     id: "analytics",
@@ -70,7 +92,7 @@ const PROJECTS = [
     highlight: "Interactive Plotly visualizations, live-filterable",
     demoUrl: "",
     githubUrl: "https://github.com/Realmaryambano",
-    image: "",
+    image: "images/projects/analytics.jpg",
   },
   {
     id: "student",
@@ -85,7 +107,7 @@ const PROJECTS = [
     highlight: "Secure, admin-gated CRUD on SQL Server",
     demoUrl: "",
     githubUrl: "https://github.com/Realmaryambano",
-    image: "",
+    image: "images/projects/student.jpg",
   },
   {
     id: "payroll",
@@ -100,7 +122,7 @@ const PROJECTS = [
     highlight: "Automated tax deductions + payslip generation",
     demoUrl: "",
     githubUrl: "https://github.com/Realmaryambano",
-    image: "",
+    image: "images/projects/payroll.jpg",
   },
   {
     id: "boutique",
@@ -115,7 +137,7 @@ const PROJECTS = [
     highlight: "Full OOP architecture, GUI + database integration",
     demoUrl: "",
     githubUrl: "https://github.com/Realmaryambano",
-    image: "",
+    image: "images/projects/boutique.jpg",
   },
   {
     id: "bu-clone",
@@ -130,7 +152,7 @@ const PROJECTS = [
     highlight: "Fully responsive, multi-page, zero frameworks",
     demoUrl: "",
     githubUrl: "https://github.com/Realmaryambano",
-    image: "",
+    image: "images/projects/bu-clone.jpg",
   },
 ];
 
@@ -184,9 +206,9 @@ const CERTS = [
 const TIMELINE_YEARS = [2021, 2022, 2023, 2024, 2025, 2026, 2027];
 
 const STATS = [
-  { label: "Projects shipped", value: 6, suffix: "+", icon: Rocket },
-  { label: "LinkedIn connections", value: 2000, suffix: "+", icon: Users },
-  { label: "Certifications earned", value: 4, suffix: "", icon: Award },
+  { label: "Projects shipped", value: 56, suffix: "+", icon: Rocket },
+  { label: "LinkedIn followers", value: 3000, suffix: "+", icon: Users },
+  { label: "Certifications earned", value: 10, suffix: "+", icon: Award },
   { label: "Top-performer score", value: 97, suffix: "%", icon: Sparkles },
   { label: "Databases wrangled", value: 5, suffix: "+", icon: Database },
 ];
@@ -195,23 +217,23 @@ const STATS = [
 // whenever you have them (a LinkedIn recommendation copy-pastes perfectly).
 const TESTIMONIALS = [
   {
-    quote: "Add a client testimonial here — a line or two on what it was like working with you on a freelance project.",
-    name: "Add name",
+    quote: "Working with Maryam was an excellent experience from start to finish. She took the time to understand exactly what I needed, communicated clearly throughout the project, and was always open to feedback and improvements. What impressed me most was her ability to turn a general idea into a polished, functional, and professional-looking solution. She was reliable, detail-oriented, and genuinely invested in delivering quality work rather than simply completing the task. I would definitely recommend Maryam to anyone looking for a skilled and dedicated developer.",
+    name: "Daniel Anderson",
     role: "Freelance client",
   },
   {
-    quote: "This card is a great spot for feedback from a professor, mentor, or workshop lead who's seen your work up close.",
-    name: "Add name",
+    quote: "Maryam has demonstrated impressive dedication, curiosity, and consistency in her work. She approaches technical challenges with a problem-solving mindset and is not afraid to explore new technologies when a project requires them. Her ability to learn quickly and apply what she learns to real-world projects is one of her strongest qualities. She also pays close attention to the user experience and overall quality of her work. I have been particularly impressed by her growth as a developer and her willingness to continuously improve her skills.",
+    name: "Muhammad Ali Khan",
     role: "Mentor · Instructor",
   },
   {
-    quote: "Swap this in for a teammate's shout-out from a group project, hackathon, or your internship at Bonanza Satrangi.",
-    name: "Add name",
+    quote: "Working alongside Maryam was a great experience. She is someone who takes responsibility for her work and makes sure that tasks are completed properly rather than simply checking them off a list. She brings creative ideas to the table, communicates well with the team, and is always willing to help when someone is facing a technical challenge. Her combination of technical ability, attention to detail, and positive attitude made collaboration much easier. I would be happy to work with her again on future projects.",
+    name: "Samia Abubakar",
     role: "Teammate · Colleague",
   },
   {
-    quote: "A LinkedIn recommendation drops in here word-for-word — just copy it across once you have one saved.",
-    name: "Add name",
+    quote: "Maryam is a highly motivated and talented developer who consistently demonstrates a strong commitment to learning and professional growth. She has a solid foundation in full-stack development and AI-related technologies and has an impressive ability to transform ideas into practical, well-designed applications. Her work reflects both technical knowledge and creativity, while her willingness to take on challenges shows strong potential for continued growth. I would confidently recommend Maryam to any team or client looking for someone who is hardworking, adaptable, and passionate about building meaningful technology solutions.",
+    name: "James Mitchell",
     role: "LinkedIn recommendation",
   },
 ];
@@ -380,6 +402,28 @@ function CountUp({ value, suffix = "", duration = 1400 }) {
     <span ref={ref} className="stat-card__num">
       {display}{suffix}
     </span>
+  );
+}
+
+// Image with graceful fallback to the original dashed placeholder if the
+// dummy path 404s (handy while the real images/ folder is still empty).
+function ImageOrPlaceholder({ src, alt, icon: Icon = ImagePlus, label, className = "", imgClassName = "" }) {
+  const [failed, setFailed] = useState(false);
+  if (!src || failed) {
+    return (
+      <div className={className}>
+        <Icon size={22} />
+        <span>{label}</span>
+      </div>
+    );
+  }
+  return (
+    <img
+      src={src}
+      alt={alt}
+      className={imgClassName}
+      onError={() => setFailed(true)}
+    />
   );
 }
 
@@ -689,10 +733,13 @@ export default function Portfolio() {
 
             <div className="hero__visual">
               <div className="hero__photo-frame">
-                <div className="hero__photo-placeholder">
-                  <ImagePlus size={30} />
-                  <span>Add your photo</span>
-                </div>
+                <ImageOrPlaceholder
+                  src={IMAGES.heroPhoto}
+                  alt="Maryam Bano"
+                  label="Add your photo"
+                  className="hero__photo-placeholder"
+                  imgClassName="hero__photo-img"
+                />
                 <div className="hero__photo-ring" aria-hidden="true" />
               </div>
               {HERO_TAGS.map((t, i) => (
@@ -743,14 +790,17 @@ export default function Portfolio() {
             <div className="about__visual-col">
               <SplitHeadline className="section__title" text="A developer who'd rather *ship something* than talk about shipping it." />
               <Reveal delay={80} variant="scale" className="about__photo">
-                <div className="about__photo-placeholder">
-                  <ImagePlus size={28} />
-                  <span>Add a photo of you at work</span>
-                </div>
+                <ImageOrPlaceholder
+                  src={IMAGES.aboutPhoto}
+                  alt="Maryam Bano at work"
+                  label="Add a photo of you at work"
+                  className="about__photo-placeholder"
+                  imgClassName="about__photo-img"
+                />
               </Reveal>
               <Reveal delay={160} className="about__facts">
                 <div className="fact"><MapPin size={15} /><span>Based in Karachi, Pakistan</span></div>
-                <div className="fact"><Code2 size={15} /><span>Python · Flask · Django · Next.js</span></div>
+                <div className="fact"><Code2 size={15} /><span>Python · Flask · Sciki · Next.js · React</span></div>
                 <div className="fact"><Sparkles size={15} /><span>97.25% — Generative AI Top Performer</span></div>
               </Reveal>
             </div>
@@ -772,12 +822,20 @@ export default function Portfolio() {
                 occasional Model UN debate.
               </p>
               <div className="about__gallery">
-                {[0, 1].map((i) => (
-                  <div className="about__gallery-tile" key={i}>
-                    <ImagePlus size={20} />
-                    <span>Add work photo {i + 1}</span>
-                  </div>
-                ))}
+                <ImageOrPlaceholder
+                  src={IMAGES.aboutWork1}
+                  alt="Work photo 1"
+                  label="Add work photo 1"
+                  className="about__gallery-tile"
+                  imgClassName="about__gallery-img"
+                />
+                <ImageOrPlaceholder
+                  src={IMAGES.aboutWork2}
+                  alt="Work photo 2"
+                  label="Add work photo 2"
+                  className="about__gallery-tile"
+                  imgClassName="about__gallery-img"
+                />
               </div>
             </Reveal>
           </div>
@@ -830,14 +888,13 @@ export default function Portfolio() {
                     >
                       <div className="project-card__glow" />
                       <div className="project-card__media">
-                        {proj.image ? (
-                          <img src={proj.image} alt={proj.title} className="project-card__media-img" />
-                        ) : (
-                          <div className="project-card__media-placeholder">
-                            <ImagePlus size={22} />
-                            <span>Add screenshot</span>
-                          </div>
-                        )}
+                        <ImageOrPlaceholder
+                          src={proj.image}
+                          alt={proj.title}
+                          label="Add screenshot"
+                          className="project-card__media-placeholder"
+                          imgClassName="project-card__media-img"
+                        />
                       </div>
                       <div className="project-card__top">
                         <span className="project-card__icon"><Icon size={22} /></span>
@@ -1057,14 +1114,14 @@ export default function Portfolio() {
           <div className={`modal accent-${activeItem.data.accent}`} onClick={(e) => e.stopPropagation()} role="dialog" aria-modal="true">
             <button className="modal__close" onClick={() => setActiveItem(null)} {...hoverProps} aria-label="Close"><X size={18} /></button>
             <div className="modal__media">
-              {activeItem.data.image ? (
-                <img src={activeItem.data.image} alt={activeItem.data.title} className="modal__media-img" />
-              ) : (
-                <div className="modal__media-placeholder">
-                  <ImagePlus size={26} />
-                  <span>Add a screenshot of this project</span>
-                </div>
-              )}
+              <ImageOrPlaceholder
+                src={activeItem.data.image}
+                alt={activeItem.data.title}
+                label="Add a screenshot of this project"
+                icon={ImagePlus}
+                className="modal__media-placeholder"
+                imgClassName="modal__media-img"
+              />
             </div>
             <span className="modal__icon"><activeItem.data.icon size={26} /></span>
             <span className="project-card__tag">{activeItem.data.tag}</span>
@@ -1342,6 +1399,12 @@ function StyleBlock() {
         animation: blobMorph 10s ease-in-out infinite;
         box-shadow: var(--shadow);
       }
+      .hero__photo-img {
+        width: 100%; height: 100%; object-fit: cover;
+        border-radius: 42% 58% 63% 37% / 45% 40% 60% 55%;
+        box-shadow: var(--shadow);
+        animation: blobMorph 10s ease-in-out infinite;
+      }
       @keyframes blobMorph {
         0%, 100% { border-radius: 42% 58% 63% 37% / 45% 40% 60% 55%; }
         50% { border-radius: 60% 40% 38% 62% / 55% 62% 38% 45%; }
@@ -1435,6 +1498,8 @@ function StyleBlock() {
         transition: transform .3s cubic-bezier(.34,1.56,.64,1), border-color .3s ease, background .4s ease, color .3s ease;
       }
       .about__photo-placeholder:hover { transform: scale(1.02) rotate(-1deg); border-color: var(--violet); color: var(--violet); background: linear-gradient(150deg, color-mix(in srgb, var(--violet) 34%, var(--surface)), color-mix(in srgb, var(--coral) 28%, var(--surface))); }
+      .about__photo-img { aspect-ratio: 4/3; width: 100%; border-radius: 24px; object-fit: cover; display: block; box-shadow: var(--shadow); transition: transform .3s cubic-bezier(.34,1.56,.64,1); }
+      .about__photo-img:hover { transform: scale(1.02) rotate(-1deg); }
       .about__facts { display: flex; flex-direction: column; gap: 12px; margin-top: 22px; }
       .fact { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--text); background: var(--surface); border: 1px solid var(--border); padding: 10px 14px; border-radius: 12px; width: fit-content; transition: transform .2s ease, border-color .2s ease; }
       .fact:hover { transform: translateX(4px); border-color: var(--violet); }
@@ -1448,6 +1513,8 @@ function StyleBlock() {
         transition: transform .3s cubic-bezier(.34,1.56,.64,1), border-color .3s ease, color .3s ease, background .3s ease;
       }
       .about__gallery-tile:hover { transform: translateY(-4px) rotate(1deg); border-color: var(--teal); color: var(--teal); background: linear-gradient(150deg, color-mix(in srgb, var(--teal) 26%, var(--surface)), var(--bg-alt)); }
+      .about__gallery-img { aspect-ratio: 4/3; border-radius: 16px; object-fit: cover; display: block; width: 100%; transition: transform .3s cubic-bezier(.34,1.56,.64,1); }
+      .about__gallery-img:hover { transform: translateY(-4px) rotate(1deg); }
 
       /* ---------- CREATIVE / TECH BLOCKS ---------- */
       .tech-block { margin-top: 56px; }
@@ -1630,7 +1697,7 @@ function StyleBlock() {
       .testimonial-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: var(--amber); }
       .testimonial-card__quote-icon { color: var(--amber-text); opacity: .8; }
       .testimonial-card__stars { display: flex; gap: 2px; color: var(--amber); }
-      .testimonial-card__text { color: var(--text-muted); font-size: 14.5px; line-height: 1.6; margin: 0; flex-grow: 1; font-style: italic; }
+      .testimonial-card__text { color: var(--text-muted); font-size: 14.5px; line-height: 1.6; margin: 0; flex-grow: 1; font-style: italic; text-align: justify; text-justify: inter-word; hyphens: auto; }
       .testimonial-card__who { display: flex; align-items: center; gap: 10px; margin-top: 4px; }
       .testimonial-card__avatar {
         width: 34px; height: 34px; border-radius: 50%; flex-shrink: 0;
