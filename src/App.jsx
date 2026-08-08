@@ -188,11 +188,11 @@ const EXPERIENCE = {
 };
 
 const SKILLS = [
-  { group: "Languages", items: ["Python", "C++", "JavaScript", "TypeScript", "Java", "HTML", "CSS", "Tailwind CSS", "R"] },
+  { group: "Languages", items: ["Python", "C++","React", "JavaScript", "TypeScript", "Java", "HTML", "CSS", "Tailwind CSS"] },
   { group: "Web & Backend", items: ["Flask", "Django", "Next.js", "SQLAlchemy", "Jinja2", "REST APIs", "Resend API"] },
-  { group: "Databases", items: ["Oracle Database", "MySQL", "SQLite", "SQL Server", "MS Access"] },
+  { group: "Databases", items: ["Oracle Database", "PostgreSQL", "MySQL", "SQLite", "SQL Server", "MS Access"] },
   { group: "AI & ML", items: ["NumPy", "Pandas", "Matplotlib", "Seaborn", "Scikit-learn", "TensorFlow"] },
-  { group: "Reporting & Tools", items: ["ReportLab", "JasperReports", "openpyxl", "Git", "GitHub", "Jupyter"] },
+  { group: "Reporting & Tools", items: ["ReportLab", "Visual Studio Code", "JasperReports", "openpyxl", "Git", "GitHub", "Jupyter"] },
 ];
 
 const CERTS = [
@@ -213,8 +213,6 @@ const STATS = [
   { label: "Databases wrangled", value: 5, suffix: "+", icon: Database },
 ];
 
-// Dummy placeholder testimonials — swap the quote/name/role for real ones
-// whenever you have them (a LinkedIn recommendation copy-pastes perfectly).
 const TESTIMONIALS = [
   {
     quote: "Working with Maryam was an excellent experience from start to finish. She took the time to understand exactly what I needed, communicated clearly throughout the project, and was always open to feedback and improvements. What impressed me most was her ability to turn a general idea into a polished, functional, and professional-looking solution. She was reliable, detail-oriented, and genuinely invested in delivering quality work rather than simply completing the task. I would definitely recommend Maryam to anyone looking for a skilled and dedicated developer.",
