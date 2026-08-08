@@ -1033,6 +1033,7 @@ export default function Portfolio() {
           <div className="testimonials__inner">
             <Reveal className="section__label"><span className="eyebrow-chip eyebrow-chip--amber">Testimonials</span></Reveal>
             <SplitHeadline className="section__title" text="Nice things *people have said.*" />
+            <Reveal delay={90}><p className="section__sub">    Numbers can tell a story, but words carry the emotion, trust, and impact behind it.</p></Reveal>
             <div className="testimonials-grid">
               {TESTIMONIALS.map((t, i) => (
                 <Reveal key={i} delay={(i % 2) * 90} className="testimonial-card">
