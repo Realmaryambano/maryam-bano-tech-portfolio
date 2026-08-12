@@ -183,9 +183,9 @@ const PROJECTS = [
       "A multi-page static rebuild of the university site — responsive layouts, interactive components, and cross-browser polish, done with an eye for clean UI/UX fundamentals.",
     tech: ["HTML5", "CSS3", "JavaScript"],
     highlight: "Fully responsive, multi-page, zero frameworks",
-    demoUrl: "",
-    githubUrl: "https://github.com/Realmaryambano",
-    image: "images/projects/bu-clone.jpg",
+    demoUrl: "https://bahriauniversityclone.netlify.app/",
+    githubUrl: "https://github.com/Realmaryambano/Bahria-University-Website-Clone",
+    image: "images/bahria.png",
   },
 ];
 
