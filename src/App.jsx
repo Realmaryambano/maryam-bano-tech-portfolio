@@ -64,6 +64,39 @@ const NAV_ITEMS = [
 
 const TOP_LEVEL_IDS = NAV_ITEMS.map((n) => n.id);
 
+const EXPERIENCE_PROJECTS = [
+  {
+    id: "ecms",
+    title: "Employee Complaint Management System (ECMS)",
+    tag: "Internship · Bonanza Satrangi",
+    accent: "blue",
+    icon: Users,
+    blurb: "An internal complaint tracker built for a real company, login to reporting.",
+    description:
+      "A Flask + Oracle Database platform built during my internship at Bonanza Satrangi — role-based login for employees and IT/admin, a complaint submission form with category, priority, and file attachments, live status tracking, dashboards with complaint stats, and reports exportable to PDF or Excel across flexible date-range filters.",
+    tech: ["Flask", "Oracle Database", "oracledb", "ReportLab", "openpyxl", "Jinja2"],
+    highlight: "Role-based dashboards with PDF/Excel export reporting",
+    demoUrl: "",
+    githubUrl: "https://github.com/Realmaryambano/Employee-Complaint-Management-System",
+    image: "images/ecms.png",
+  },
+  {
+    id: "gift-voucher",
+    title: "Gift Voucher Report Generation System",
+    tag: "Internship · Bonanza Satrangi",
+    accent: "teal",
+    icon: Award,
+    blurb: "Excel in, Oracle in between, branded PDF vouchers out.",
+    description:
+      "An internal voucher management tool built during my internship — authorized users upload voucher batches via Excel straight into an Oracle database, then generate branded, multi-page PDF voucher reports by batch number or a specific voucher-code range, powered by JasperReports wired into a Flask + Java 21 backend.",
+    tech: ["Flask", "Oracle Database", "JasperReports", "Java 21", "pandas", "openpyxl"],
+    highlight: "JasperReports + Java 21 wired straight into Flask",
+    demoUrl: "",
+    githubUrl: "https://github.com/Realmaryambano/gift-voucher-report-generation-system",
+    image: "images/gift-voucher.png",
+  },
+];
+
 const PROJECTS = [
   {
     id: "mariame",
@@ -166,26 +199,7 @@ const EXPERIENCE = {
   company: "Bonanza Satrangi",
   role: "IT Intern",
   period: "Jul 2026 — Aug 2026",
-  items: [
-    {
-      name: "Employee Complaint Management System (ECMS)",
-      points: [
-        "Role-based auth for Employee & IT/Admin users",
-        "Complaint submission with file attachments + status tracking",
-        "Dashboards with complaint stats, PDF/Excel export reporting",
-        "Oracle Database for centralized, secure data",
-      ],
-    },
-    {
-      name: "Gift Voucher Report Generation System",
-      points: [
-        "Bulk voucher upload via Excel with validation → Oracle DB",
-        "Batch & voucher-range PDF report generation on demand",
-        "JasperReports + Java 21 wired into the Flask backend",
-        "Branded, multi-page vouchers with QR/barcode components",
-      ],
-    },
-  ],
+  description: "Worked on internal tools for complaint management and voucher reporting, using Flask and Oracle Database. Developed role-based dashboards and automated report generation.",
 };
 
 const SKILLS = [
@@ -687,7 +701,7 @@ export default function Portfolio() {
 
           <div className="hero__grid">
             <div className="hero__text">
-              <p className="hero__eyebrow"><span className="dot dot--teal" /> Available for freelance, internships  &amp; job opportunities</p>
+              <p className="hero__eyebrow"><span className="dot dot--teal" /> Available for freelance &amp; internships</p>
 
               <h1 className="hero__name">
                 {heroLetters.map((ch, i) => (
@@ -877,14 +891,61 @@ export default function Portfolio() {
                     <h4>{EXPERIENCE.role} · {EXPERIENCE.company}</h4>
                     <span className="timeline__period">{EXPERIENCE.period}</span>
                   </div>
-                  <span className="pill pill--amber" style={{ marginBottom: 14, display: "inline-block" }}>2-month internship</span>
-                  <div className="exp-grid">
-                    {EXPERIENCE.items.map((it) => (
-                      <div className="exp-card" key={it.name}>
-                        <h5>{it.name}</h5>
-                        <ul>{it.points.map((p) => <li key={p}>{p}</li>)}</ul>
-                      </div>
-                    ))}
+                  <p className="timeline__exp-desc">{EXPERIENCE.description}</p>
+                  <span className="pill pill--amber" style={{ marginBottom: 20, display: "inline-block" }}>2-month internship</span>
+
+                  <div className="projects-grid" style={{ marginTop: 4 }}>
+                    {EXPERIENCE_PROJECTS.map((proj, i) => {
+                      const Icon = proj.icon;
+                      return (
+                        <Reveal key={proj.id} delay={i * 90} className="reveal-card">
+                          <button
+                            className={`project-card accent-${proj.accent}`}
+                            onMouseMove={handleCardTilt}
+                            onMouseLeave={(e) => { resetTilt(e); setCursorHover(false); }}
+                            onMouseEnter={() => setCursorHover(true)}
+                            onClick={() => setActiveItem({ type: "project", data: proj })}
+                          >
+                            <div className="project-card__glow" />
+                            <div className="project-card__media">
+                              <ImageOrPlaceholder
+                                src={proj.image}
+                                alt={proj.title}
+                                icon={Icon}
+                                label={proj.tag}
+                                className="project-card__media-placeholder"
+                                imgClassName="project-card__media-img"
+                              />
+                              <span className="project-card__media-hint"><ArrowUpRight size={13} /> View project</span>
+                            </div>
+                            <div className="project-card__top">
+                              <span className="project-card__icon"><Icon size={22} /></span>
+                              <span className="project-card__tag">{proj.tag}</span>
+                            </div>
+                            <h3 className="project-card__title">{proj.title}</h3>
+                            <p className="project-card__blurb">{proj.blurb}</p>
+                            <div className="project-card__tags">
+                              {proj.tech.slice(0, 3).map((t, ti) => (
+                                <span key={t} className="mini-tag" style={{ transitionDelay: `${ti * 70 + 120}ms` }}>{t}</span>
+                              ))}
+                            </div>
+                            <div className="project-card__foot">
+                              <span
+                                className="project-card__open"
+                                onClick={(e) => openDemo(e, proj.githubUrl)}
+                                role="button"
+                                tabIndex={0}
+                              >
+                                <span>Open on GitHub</span><ArrowUpRight size={15} />
+                              </span>
+                              <span className="demo-pill demo-pill--disabled">
+                                <Play size={11} /> No live demo
+                              </span>
+                            </div>
+                          </button>
+                        </Reveal>
+                      );
+                    })}
                   </div>
                 </div>
               </div>
@@ -942,10 +1003,12 @@ export default function Portfolio() {
                         <ImageOrPlaceholder
                           src={proj.image}
                           alt={proj.title}
-                          label="Add screenshot"
+                          icon={Icon}
+                          label={proj.tag}
                           className="project-card__media-placeholder"
                           imgClassName="project-card__media-img"
                         />
+                        <span className="project-card__media-hint"><ArrowUpRight size={13} /> View project</span>
                       </div>
                       <div className="project-card__top">
                         <span className="project-card__icon"><Icon size={22} /></span>
@@ -1152,8 +1215,8 @@ export default function Portfolio() {
               <ImageOrPlaceholder
                 src={activeItem.data.image}
                 alt={activeItem.data.title}
-                label="Add a screenshot of this project"
-                icon={ImagePlus}
+                icon={activeItem.data.icon}
+                label={activeItem.data.tag}
                 className="modal__media-placeholder"
                 imgClassName="modal__media-img"
               />
@@ -1604,6 +1667,10 @@ function StyleBlock() {
       .timeline__top h4 { font-family: var(--font-body); font-weight: 700; font-size: 17px; margin: 0; color: var(--text); }
       .timeline__period { font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); }
       .timeline__degree { color: var(--text-muted); margin: 0 0 10px; }
+      .timeline__exp-desc {
+        color: var(--text-muted); font-size: 15.5px; line-height: 1.7;
+        margin: 2px 0 18px; max-width: 620px; text-align: left;
+      }
       .pill { display: inline-block; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 999px; }
       .pill--amber { background: color-mix(in srgb, var(--amber) 28%, transparent); color: var(--amber-text); }
 
@@ -1630,18 +1697,66 @@ function StyleBlock() {
       .project-card__glow { position: absolute; inset: -40%; background: radial-gradient(circle at 30% 20%, var(--card-accent) 0%, transparent 60%); opacity: 0; transition: opacity .35s ease; pointer-events: none; }
       .project-card:hover .project-card__glow { opacity: .16; }
 
-      .project-card__media { margin: -24px -24px 4px -24px; aspect-ratio: 16/10; overflow: hidden; border-radius: 20px 20px 0 0; position: relative; }
-      .project-card__media-img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s cubic-bezier(.16,1,.3,1), filter .4s ease; }
-      .project-card:hover .project-card__media-img { transform: scale(1.06); }
+      /* Framed-mat treatment: the media block is a tinted card in the project's
+         accent color, and the actual screenshot sits inset on top of it with its
+         own rounded corners + shadow — like a photo in a mount. This keeps every
+         card the same overall shape no matter the screenshot's own aspect ratio,
+         without the harsh crops of edge-to-edge cover or the empty space of contain. */
+      .project-card__media {
+        margin: -24px -24px 4px -24px; aspect-ratio: 16/10; overflow: hidden; border-radius: 20px 20px 0 0;
+        position: relative; padding: 14px;
+        background:
+          radial-gradient(circle at 22% 18%, color-mix(in srgb, var(--card-accent) 24%, transparent), transparent 60%),
+          linear-gradient(150deg, color-mix(in srgb, var(--card-accent) 16%, var(--bg-alt)), var(--bg-alt));
+        display: flex; align-items: center; justify-content: center;
+      }
+      .project-card__media-img {
+        width: 100%; height: 100%; object-fit: cover; object-position: center;
+        display: block; border-radius: 12px;
+        box-shadow: 0 10px 24px color-mix(in srgb, var(--card-accent) 22%, transparent), 0 1px 0 color-mix(in srgb, var(--border) 60%, transparent);
+        transition: transform .4s cubic-bezier(.34,1.56,.64,1), box-shadow .3s ease;
+      }
+      .project-card:hover .project-card__media-img { transform: scale(1.02); box-shadow: 0 16px 32px color-mix(in srgb, var(--card-accent) 32%, transparent); }
+      .project-card__media-hint {
+        position: absolute; z-index: 2; left: 24px; bottom: 24px;
+        display: inline-flex; align-items: center; gap: 5px;
+        font-family: var(--font-mono); font-size: 11px; font-weight: 600;
+        padding: 7px 12px; border-radius: 999px; color: white;
+        background: color-mix(in srgb, var(--card-accent) 80%, black 6%);
+        box-shadow: 0 6px 16px color-mix(in srgb, var(--card-accent) 40%, transparent);
+        opacity: 0; transform: translateY(8px);
+        transition: opacity .3s ease, transform .3s cubic-bezier(.34,1.56,.64,1);
+        pointer-events: none;
+      }
+      .project-card:hover .project-card__media-hint { opacity: 1; transform: translateY(0); }
       .project-card__media-placeholder {
-        width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
-        background: linear-gradient(150deg, color-mix(in srgb, var(--card-accent) 16%, var(--bg-alt)), color-mix(in srgb, var(--card-accent) 6%, var(--bg-alt)));
+        width: 100%; height: 100%; position: relative; overflow: hidden; border-radius: 12px;
+        display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
+        background:
+          radial-gradient(circle at 28% 22%, color-mix(in srgb, var(--card-accent) 38%, transparent), transparent 58%),
+          linear-gradient(150deg, color-mix(in srgb, var(--card-accent) 22%, var(--bg-alt)), color-mix(in srgb, var(--card-accent) 5%, var(--bg-alt)));
         color: var(--text-muted); font-family: var(--font-mono); font-size: 11.5px;
         transition: background .4s ease, color .3s ease;
       }
-      .project-card:hover .project-card__media-placeholder {
-        background: linear-gradient(150deg, color-mix(in srgb, var(--card-accent) 55%, var(--bg-alt)), color-mix(in srgb, var(--card-accent) 30%, var(--bg-alt)));
-        color: white;
+      .project-card__media-placeholder::before {
+        content: '';
+        position: absolute; inset: 0;
+        background-image: radial-gradient(color-mix(in srgb, var(--card-accent) 30%, transparent) 1.2px, transparent 1.2px);
+        background-size: 18px 18px;
+        opacity: .55;
+      }
+      .project-card__media-placeholder svg {
+        position: relative; z-index: 1; width: 22px; height: 22px; padding: 14px; box-sizing: content-box;
+        border-radius: 50%; background: color-mix(in srgb, white 18%, var(--card-accent) 22%);
+        color: var(--card-accent); box-shadow: 0 10px 22px color-mix(in srgb, var(--card-accent) 35%, transparent);
+        transition: transform .3s cubic-bezier(.34,1.56,.64,1);
+      }
+      .project-card:hover .project-card__media-placeholder svg { transform: scale(1.08) rotate(-6deg); }
+      .project-card__media-placeholder span {
+        position: relative; z-index: 1; font-weight: 600; letter-spacing: .03em; text-align: center;
+        font-size: 11px; padding: 6px 14px; border-radius: 999px; max-width: 82%;
+        background: color-mix(in srgb, var(--surface) 78%, transparent); backdrop-filter: blur(6px);
+        border: 1px solid color-mix(in srgb, var(--card-accent) 32%, transparent); color: var(--text);
       }
 
       .accent-coral { --card-accent: var(--coral); }
@@ -1788,12 +1903,43 @@ function StyleBlock() {
       @keyframes popIn { from { opacity: 0; transform: scale(.9) translateY(20px); } to { opacity: 1; transform: scale(1) translateY(0); } }
       .modal__close { position: absolute; top: 18px; right: 18px; width: 32px; height: 32px; border-radius: 50%; background: var(--bg-alt); border: none; color: var(--text); display: flex; align-items: center; justify-content: center; transition: transform .2s ease; z-index: 2; }
       .modal__close:hover { transform: rotate(90deg); }
-      .modal__media { margin: -32px -32px 20px -32px; aspect-ratio: 16/9; overflow: hidden; }
-      .modal__media-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+      .modal__media {
+        margin: -32px -32px 20px -32px; aspect-ratio: 16/9; overflow: hidden; position: relative;
+        padding: 16px; display: flex; align-items: center; justify-content: center;
+        background:
+          radial-gradient(circle at 22% 18%, color-mix(in srgb, var(--card-accent, var(--violet)) 24%, transparent), transparent 60%),
+          linear-gradient(150deg, color-mix(in srgb, var(--card-accent, var(--violet)) 16%, var(--bg-alt)), var(--bg-alt));
+      }
+      .modal__media-img {
+        width: 100%; height: 100%; object-fit: cover; object-position: center; display: block;
+        border-radius: 14px;
+        box-shadow: 0 12px 28px color-mix(in srgb, var(--card-accent, var(--violet)) 24%, transparent);
+      }
       .modal__media-placeholder {
-        width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
-        background: linear-gradient(150deg, color-mix(in srgb, var(--card-accent, var(--violet)) 22%, var(--bg-alt)), color-mix(in srgb, var(--card-accent, var(--violet)) 8%, var(--bg-alt)));
+        width: 100%; height: 100%; position: relative; overflow: hidden; border-radius: 14px;
+        display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
+        background:
+          radial-gradient(circle at 28% 22%, color-mix(in srgb, var(--card-accent, var(--violet)) 38%, transparent), transparent 58%),
+          linear-gradient(150deg, color-mix(in srgb, var(--card-accent, var(--violet)) 22%, var(--bg-alt)), color-mix(in srgb, var(--card-accent, var(--violet)) 6%, var(--bg-alt)));
         color: var(--text-muted); font-family: var(--font-mono); font-size: 12px; text-align: center; padding: 20px;
+      }
+      .modal__media-placeholder::before {
+        content: '';
+        position: absolute; inset: 0;
+        background-image: radial-gradient(color-mix(in srgb, var(--card-accent, var(--violet)) 30%, transparent) 1.2px, transparent 1.2px);
+        background-size: 18px 18px;
+        opacity: .5;
+      }
+      .modal__media-placeholder svg {
+        position: relative; z-index: 1; width: 24px; height: 24px; padding: 15px; box-sizing: content-box;
+        border-radius: 50%; background: color-mix(in srgb, white 18%, var(--card-accent, var(--violet)) 22%);
+        color: var(--card-accent, var(--violet)); box-shadow: 0 10px 22px color-mix(in srgb, var(--card-accent, var(--violet)) 35%, transparent);
+      }
+      .modal__media-placeholder span {
+        position: relative; z-index: 1; font-weight: 600; letter-spacing: .03em;
+        font-size: 11.5px; padding: 6px 14px; border-radius: 999px; max-width: 82%;
+        background: color-mix(in srgb, var(--surface) 78%, transparent); backdrop-filter: blur(6px);
+        border: 1px solid color-mix(in srgb, var(--card-accent, var(--violet)) 32%, transparent); color: var(--text);
       }
       .modal__icon { display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 14px; background: color-mix(in srgb, var(--card-accent, var(--amber)) 20%, transparent); color: var(--card-accent, var(--amber)); margin-bottom: 14px; }
       .modal__title { font-family: var(--font-display); font-size: 26px; margin: 10px 0 14px; color: var(--text); }
