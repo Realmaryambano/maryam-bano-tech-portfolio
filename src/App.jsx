@@ -190,7 +190,7 @@ const EXPERIENCE = {
 const SKILLS = [
   { group: "Languages", items: ["Python", "C++","React", "JavaScript", "TypeScript", "Java", "HTML", "CSS", "Tailwind CSS"] },
   { group: "Web & Backend", items: ["Flask", "Django", "Next.js", "SQLAlchemy", "Jinja2", "REST APIs", "Resend API"] },
-  { group: "Databases", items: ["Oracle Database", "PostgreSQL", "MySQL", "SQLite", "SQL Server", "MS Access"] },
+  { group: "Databases", items: ["Oracle Database", "PostgreSQL","MongoDB", "MySQL", "SQLite", "SQL Server", "MS Access"] },
   { group: "AI & ML", items: ["NumPy", "Pandas", "Matplotlib", "Seaborn", "Scikit-learn", "TensorFlow"] },
   { group: "Reporting & Tools", items: ["ReportLab", "Visual Studio Code", "JasperReports", "openpyxl", "Git", "GitHub", "Jupyter"] },
 ];
@@ -686,7 +686,7 @@ export default function Portfolio() {
 
           <div className="hero__grid">
             <div className="hero__text">
-              <p className="hero__eyebrow"><span className="dot dot--teal" /> Available for freelance &amp; internships</p>
+              <p className="hero__eyebrow"><span className="dot dot--teal" /> Available for freelance, internships  &amp; job opportunities.</p>
 
               <h1 className="hero__name">
                 {heroLetters.map((ch, i) => (
