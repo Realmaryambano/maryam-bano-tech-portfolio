@@ -47,6 +47,7 @@ const IMAGES = {
 const NAV_ITEMS = [
   { id: "home", label: "Home" },
   { id: "about", label: "About" },
+  { id: "experience", label: "Experience" },
   {
     id: "technology", label: "Technology",
     children: [
@@ -164,7 +165,7 @@ const EDUCATION = [
 const EXPERIENCE = {
   company: "Bonanza Satrangi",
   role: "IT Intern",
-  period: "Jul 2026 — Present",
+  period: "Jul 2026 — Aug 2026",
   items: [
     {
       name: "Employee Complaint Management System (ECMS)",
@@ -686,7 +687,7 @@ export default function Portfolio() {
 
           <div className="hero__grid">
             <div className="hero__text">
-              <p className="hero__eyebrow"><span className="dot dot--teal" /> Available for freelance, internships  &amp; job opportunities.</p>
+              <p className="hero__eyebrow"><span className="dot dot--teal" /> Available for freelance &amp; internships</p>
 
               <h1 className="hero__name">
                 {heroLetters.map((ch, i) => (
@@ -859,6 +860,38 @@ export default function Portfolio() {
           </div>
         </section>
 
+        {/* ============ EXPERIENCE ============ */}
+        <section id="experience" className="section section--alt theme-coral">
+          <Reveal className="section__label">
+            <span className="eyebrow-chip eyebrow-chip--coral">Experience</span>
+          </Reveal>
+          <SplitHeadline className="section__title" text="Time spent *building for real teams.*" />
+          <Reveal delay={90}><p className="section__sub">Hands-on internship work — shipping systems people at the company actually use.</p></Reveal>
+
+          <div className="timeline" style={{ marginTop: 24 }}>
+            <Reveal>
+              <div className="timeline__row">
+                <div className="timeline__marker timeline__marker--coral"><Briefcase size={16} /></div>
+                <div className="timeline__content">
+                  <div className="timeline__top">
+                    <h4>{EXPERIENCE.role} · {EXPERIENCE.company}</h4>
+                    <span className="timeline__period">{EXPERIENCE.period}</span>
+                  </div>
+                  <span className="pill pill--amber" style={{ marginBottom: 14, display: "inline-block" }}>2-month internship</span>
+                  <div className="exp-grid">
+                    {EXPERIENCE.items.map((it) => (
+                      <div className="exp-card" key={it.name}>
+                        <h5>{it.name}</h5>
+                        <ul>{it.points.map((p) => <li key={p}>{p}</li>)}</ul>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+          </div>
+        </section>
+
         {/* ============ TECHNOLOGY ============ */}
         <section id="technology" className="section section--alt theme-teal section--pro">
           <Reveal className="section__label">
@@ -994,22 +1027,6 @@ export default function Portfolio() {
                   </div>
                 </Reveal>
               ))}
-              <Reveal delay={180}>
-                <div className="timeline__row" ref={(el) => (yearRowRefs.current[2026] = el)}>
-                  <div className="timeline__marker timeline__marker--coral"><Briefcase size={16} /></div>
-                  <div className="timeline__content">
-                    <div className="timeline__top"><h4>{EXPERIENCE.role} · {EXPERIENCE.company}</h4><span className="timeline__period">{EXPERIENCE.period}</span></div>
-                    <div className="exp-grid">
-                      {EXPERIENCE.items.map((it) => (
-                        <div className="exp-card" key={it.name}>
-                          <h5>{it.name}</h5>
-                          <ul>{it.points.map((p) => <li key={p}>{p}</li>)}</ul>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </Reveal>
             </div>
 
             <div className="certs-grid">
