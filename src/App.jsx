@@ -687,7 +687,7 @@ export default function Portfolio() {
 
           <div className="hero__grid">
             <div className="hero__text">
-              <p className="hero__eyebrow"><span className="dot dot--teal" /> Available for freelance &amp; internships</p>
+              <p className="hero__eyebrow"><span className="dot dot--teal" /> Available for freelance, internships  &amp; job opportunities</p>
 
               <h1 className="hero__name">
                 {heroLetters.map((ch, i) => (
