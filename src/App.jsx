@@ -38,10 +38,10 @@ import { FaGithub, FaLinkedin, FaYoutube } from "react-icons/fa";
 */
 
 const IMAGES = {
-  heroPhoto: "public/images/her-photo.png",
-  aboutPhoto: "public/images/hero-photo.png",
-  aboutWork1: "public/images/working_at_office 1.png",
-  aboutWork2: "public/images/about-work-2.png",
+  heroPhoto: "/images/her-photo.png",
+  aboutPhoto: "/images/hero-photo.png",
+  aboutWork1: "/images/working_at_office 1.png",
+  aboutWork2: "/images/about-work-2.png",
 };
 
 const NAV_ITEMS = [
