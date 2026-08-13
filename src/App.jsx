@@ -4,7 +4,7 @@ import {
   ArrowDown, Leaf, BarChart3, GraduationCap, Briefcase,
   ShoppingCart, Globe, Award, Sparkles, Code2, ChevronUp, ExternalLink,
   Users, Download, ImagePlus, Cpu, Layers, ChevronDown, Rocket, Database,
-  Play, Star, MessageSquareQuote,
+  Play, Star, MessageSquareQuote, Bot, Gift, Wallet,
 } from "lucide-react";
 import { FaGithub, FaLinkedin, FaYoutube } from "react-icons/fa";
 
@@ -28,9 +28,9 @@ import { FaGithub, FaLinkedin, FaYoutube } from "react-icons/fa";
       projects/
         mariame.jpg
         analytics.jpg
-        student.jpg
-        payroll.jpg
-        boutique.jpg
+        payroll-hub.jpg
+        retail-chatbot.jpg
+        birthday-site.jpg
         bu-clone.jpg
 
   Replace any of these paths with your real filenames whenever you have
@@ -95,6 +95,21 @@ const EXPERIENCE_PROJECTS = [
     githubUrl: "https://github.com/Realmaryambano/gift-voucher-report-generation-system",
     image: "images/gift-voucher.png",
   },
+  {
+    id: "retail-chatbot",
+    title: "Retail Sales AI Chatbot",
+    tag: "Internship · Bonanza Satrangi",
+    accent: "coral",
+    icon: Bot,
+    blurb: "Ask plain-English questions, get instant retail sales answers.",
+    description:
+      "An AI-powered Streamlit dashboard built during my internship for Bonanza Satrangi's retail sales data — ask plain-English questions and get instant answers on top stores, best-selling categories, and daily sales trends, powered by an LLM layered on top of Pandas-driven analytics and data visualization.",
+    tech: ["Python", "NLP", "Streamlit", "Pandas", "Data Visualization"],
+    highlight: "Plain-English querying over live retail sales data",
+    demoUrl: "",
+    githubUrl: "https://github.com/Realmaryambano/Retail-Sales-AI-Chatbot",
+    image: "images/projects/retail-chatbot.jpg",
+  },
 ];
 
 const PROJECTS = [
@@ -128,49 +143,49 @@ const PROJECTS = [
     image: "images/analytics.png",
   },
   {
-    id: "student",
-    title: "Student Record System",
-    tag: "Web App",
+    id: "payroll-hub",
+    title: "Enterprise Payroll Hub",
+    tag: "Production-Ready Web App",
     accent: "amber",
-    icon: GraduationCap,
-    blurb: "Records, attendance, and fees — one admin panel.",
+    icon: Wallet,
+    blurb: "A production-ready payroll system, from clock-in to compliant payslip.",
     description:
-      "An admin-controlled web app for managing student records end to end: enrollment data, attendance logs, and fee payments, all running on secure CRUD operations against a SQL Server backend.",
-    tech: ["Flask", "SQL Server", "Bootstrap"],
-    highlight: "Secure, admin-gated CRUD on SQL Server",
+      "A production-ready enterprise payroll management web application — automated payslip generation, attendance tracking, and configurable corporate salary structures, built with a modern Next.js + TypeScript stack and styled with Tailwind CSS for a clean, responsive admin experience.",
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "React"],
+    highlight: "Automated payslips + configurable corporate pay structures",
     demoUrl: "",
-    githubUrl: "https://github.com/Realmaryambano",
-    image: "images/projects/student.jpg",
+    githubUrl: "https://github.com/Realmaryambano/enterprise-payroll-hub",
+    image: "images/projects/payroll-hub.jpg",
   },
   {
-    id: "payroll",
-    title: "Attendance & Payroll System",
-    tag: "HR Automation",
-    accent: "coral",
-    icon: Briefcase,
-    blurb: "Clock-ins to payslips, without the spreadsheet chaos.",
+    id: "all-versions-of-women",
+    title: "All Versions of Women",
+    tag: "TypeScript · Private Repo",
+    accent: "violet",
+    icon: Sparkles,
+    blurb: "A TypeScript project exploring the many facets of womanhood.",
     description:
-      "An HR tool that automates attendance tracking straight through to payroll — tax deductions calculated, payslips generated, and sensitive employee data handled securely, wrapped in a simple GUI.",
-    tech: ["Python", "Flask", "Django"],
-    highlight: "Automated tax deductions + payslip generation",
+      "A TypeScript-built project centered on the many versions and facets of womanhood. It's a private repository, so the code isn't public — reach out for more details on what's inside.",
+    tech: ["TypeScript", "React"],
+    highlight: "Private repo — details available on request",
     demoUrl: "",
-    githubUrl: "https://github.com/Realmaryambano",
-    image: "images/projects/payroll.jpg",
+    githubUrl: "https://github.com/Realmaryambano/all-versions-of-women",
+    image: "images/projects/all-versions-of-women.jpg",
   },
   {
-    id: "boutique",
-    title: "Boutique Management System",
-    tag: "Desktop App",
+    id: "birthday-site",
+    title: "Happy Birthday, Dear Shemaa",
+    tag: "Creative Coding",
     accent: "pink",
-    icon: ShoppingCart,
-    blurb: "A tidy OOP desktop app for a real boutique's back office.",
+    icon: Gift,
+    blurb: "A handcrafted multi-page birthday scrapbook, built for a friend.",
     description:
-      "A desktop application built around clean object-oriented design — managing customers, staff, and orders through an intuitive GUI wired up to an MS Access database.",
-    tech: ["Java", "MS Access", "OOP"],
-    highlight: "Full OOP architecture, GUI + database integration",
+      "A handcrafted multi-page birthday scrapbook website built with HTML, CSS, and JavaScript to celebrate a friend's birthday — animations, memories, and personalized designs woven into a warm, playful multi-page experience.",
+    tech: ["HTML5", "CSS3", "JavaScript", "Animations"],
+    highlight: "Playful multi-page scrapbook with custom animations",
     demoUrl: "",
-    githubUrl: "https://github.com/Realmaryambano",
-    image: "images/projects/boutique.jpg",
+    githubUrl: "https://github.com/Realmaryambano/Happy-Birthday-Dear-Shemaa",
+    image: "images/projects/birthday-site.jpg",
   },
   {
     id: "bu-clone",
