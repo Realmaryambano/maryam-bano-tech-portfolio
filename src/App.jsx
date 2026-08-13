@@ -108,7 +108,7 @@ const EXPERIENCE_PROJECTS = [
     highlight: "Plain-English querying over live retail sales data",
     demoUrl: "",
     githubUrl: "https://github.com/Realmaryambano/Retail-Sales-AI-Chatbot",
-    image: "/images/retail-chatbot.jpg",
+    image: "/images/retail.png",
   },
 ];
 
