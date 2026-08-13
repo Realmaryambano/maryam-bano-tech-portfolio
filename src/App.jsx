@@ -155,7 +155,7 @@ const PROJECTS = [
     highlight: "Automated payslips + configurable corporate pay structures",
     demoUrl: "",
     githubUrl: "https://github.com/Realmaryambano/enterprise-payroll-hub",
-    image: "images/payroll-hub.jpg",
+    image: "images/enterprise.png",
   },
   {
     id: "all-versions-of-women",
@@ -170,7 +170,7 @@ const PROJECTS = [
     highlight: "Private repo — details available on request",
     demoUrl: "",
     githubUrl: "https://github.com/Realmaryambano/all-versions-of-women",
-    image: "/images/all-versions-of-women.jpg",
+    image: "/images/women.png",
   },
   {
     id: "birthday-site",
@@ -185,7 +185,7 @@ const PROJECTS = [
     highlight: "Playful multi-page scrapbook with custom animations",
     demoUrl: "",
     githubUrl: "https://github.com/Realmaryambano/Happy-Birthday-Dear-Shemaa",
-    image: "/images/birthday-site.jpg",
+    image: "/images/birthday.png",
   },
   {
     id: "bu-clone",
