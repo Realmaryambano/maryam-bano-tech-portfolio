@@ -78,7 +78,7 @@ const EXPERIENCE_PROJECTS = [
     highlight: "Role-based dashboards with PDF/Excel export reporting",
     demoUrl: "",
     githubUrl: "https://github.com/Realmaryambano/Employee-Complaint-Management-System",
-    image: "public/images/ecms.png",
+    image: "/images/ecms.png",
   },
   {
     id: "gift-voucher",
@@ -93,7 +93,7 @@ const EXPERIENCE_PROJECTS = [
     highlight: "JasperReports + Java 21 wired straight into Flask",
     demoUrl: "",
     githubUrl: "https://github.com/Realmaryambano/gift-voucher-report-generation-system",
-    image: "public/images/gift-voucher.png",
+    image: "/images/gift-voucher.png",
   },
   {
     id: "retail-chatbot",
@@ -108,7 +108,7 @@ const EXPERIENCE_PROJECTS = [
     highlight: "Plain-English querying over live retail sales data",
     demoUrl: "",
     githubUrl: "https://github.com/Realmaryambano/Retail-Sales-AI-Chatbot",
-    image: "public/images/retail-chatbot.jpg",
+    image: "/images/retail-chatbot.jpg",
   },
 ];
 
@@ -126,7 +126,7 @@ const PROJECTS = [
     highlight: "Live on Vercel with a dark, responsive UI",
     demoUrl: "https://mariame-plants.vercel.app/",
     githubUrl: "https://github.com/Realmaryambano/mariame-plants",
-    image: "public/images/plants.png",
+    image: "/images/plants.png",
   },
   {
     id: "analytics",
@@ -140,7 +140,7 @@ const PROJECTS = [
     tech: ["Python", "Selenium", "Scikit-learn", "Streamlit", "Plotly"],
     highlight: "Interactive Plotly visualizations, live-filterable",
     githubUrl: "https://github.com/Realmaryambano/E-Commerce-Product-Analytics-Machine-Learning-Dashboard",
-    image: "public/images/analytics.png",
+    image: "/images/analytics.png",
   },
   {
     id: "payroll-hub",
@@ -155,7 +155,7 @@ const PROJECTS = [
     highlight: "Automated payslips + configurable corporate pay structures",
     demoUrl: "",
     githubUrl: "https://github.com/Realmaryambano/enterprise-payroll-hub",
-    image: "public/images/payroll-hub.jpg",
+    image: "images/payroll-hub.jpg",
   },
   {
     id: "all-versions-of-women",
@@ -170,7 +170,7 @@ const PROJECTS = [
     highlight: "Private repo — details available on request",
     demoUrl: "",
     githubUrl: "https://github.com/Realmaryambano/all-versions-of-women",
-    image: "public/images/all-versions-of-women.jpg",
+    image: "/images/all-versions-of-women.jpg",
   },
   {
     id: "birthday-site",
@@ -185,7 +185,7 @@ const PROJECTS = [
     highlight: "Playful multi-page scrapbook with custom animations",
     demoUrl: "",
     githubUrl: "https://github.com/Realmaryambano/Happy-Birthday-Dear-Shemaa",
-    image: "public/images/birthday-site.jpg",
+    image: "/images/birthday-site.jpg",
   },
   {
     id: "bu-clone",
@@ -200,7 +200,7 @@ const PROJECTS = [
     highlight: "Fully responsive, multi-page, zero frameworks",
     demoUrl: "https://bahriauniversityclone.netlify.app/",
     githubUrl: "https://github.com/Realmaryambano/Bahria-University-Website-Clone",
-    image: "public/images/bahria.png",
+    image: "/images/bahria.png",
   },
 ];
 
