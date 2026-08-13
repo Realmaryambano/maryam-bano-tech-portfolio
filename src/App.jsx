@@ -38,10 +38,10 @@ import { FaGithub, FaLinkedin, FaYoutube } from "react-icons/fa";
 */
 
 const IMAGES = {
-  heroPhoto: "images/her-photo.png",
-  aboutPhoto: "images/hero-photo.png",
-  aboutWork1: "images/working_at_office 1.png",
-  aboutWork2: "images/about-work-2.png",
+  heroPhoto: "public/images/her-photo.png",
+  aboutPhoto: "public/images/hero-photo.png",
+  aboutWork1: "public/images/working_at_office 1.png",
+  aboutWork2: "public/images/about-work-2.png",
 };
 
 const NAV_ITEMS = [
@@ -78,7 +78,7 @@ const EXPERIENCE_PROJECTS = [
     highlight: "Role-based dashboards with PDF/Excel export reporting",
     demoUrl: "",
     githubUrl: "https://github.com/Realmaryambano/Employee-Complaint-Management-System",
-    image: "images/ecms.png",
+    image: "public/images/ecms.png",
   },
   {
     id: "gift-voucher",
@@ -93,7 +93,7 @@ const EXPERIENCE_PROJECTS = [
     highlight: "JasperReports + Java 21 wired straight into Flask",
     demoUrl: "",
     githubUrl: "https://github.com/Realmaryambano/gift-voucher-report-generation-system",
-    image: "images/gift-voucher.png",
+    image: "public/images/gift-voucher.png",
   },
   {
     id: "retail-chatbot",
@@ -108,7 +108,7 @@ const EXPERIENCE_PROJECTS = [
     highlight: "Plain-English querying over live retail sales data",
     demoUrl: "",
     githubUrl: "https://github.com/Realmaryambano/Retail-Sales-AI-Chatbot",
-    image: "images/projects/retail-chatbot.jpg",
+    image: "public/images/retail-chatbot.jpg",
   },
 ];
 
@@ -126,7 +126,7 @@ const PROJECTS = [
     highlight: "Live on Vercel with a dark, responsive UI",
     demoUrl: "https://mariame-plants.vercel.app/",
     githubUrl: "https://github.com/Realmaryambano/mariame-plants",
-    image: "images/plants.png",
+    image: "public/images/plants.png",
   },
   {
     id: "analytics",
@@ -140,7 +140,7 @@ const PROJECTS = [
     tech: ["Python", "Selenium", "Scikit-learn", "Streamlit", "Plotly"],
     highlight: "Interactive Plotly visualizations, live-filterable",
     githubUrl: "https://github.com/Realmaryambano/E-Commerce-Product-Analytics-Machine-Learning-Dashboard",
-    image: "images/analytics.png",
+    image: "public/images/analytics.png",
   },
   {
     id: "payroll-hub",
@@ -155,7 +155,7 @@ const PROJECTS = [
     highlight: "Automated payslips + configurable corporate pay structures",
     demoUrl: "",
     githubUrl: "https://github.com/Realmaryambano/enterprise-payroll-hub",
-    image: "images/projects/payroll-hub.jpg",
+    image: "public/images/payroll-hub.jpg",
   },
   {
     id: "all-versions-of-women",
@@ -170,7 +170,7 @@ const PROJECTS = [
     highlight: "Private repo — details available on request",
     demoUrl: "",
     githubUrl: "https://github.com/Realmaryambano/all-versions-of-women",
-    image: "images/projects/all-versions-of-women.jpg",
+    image: "public/images/all-versions-of-women.jpg",
   },
   {
     id: "birthday-site",
@@ -185,7 +185,7 @@ const PROJECTS = [
     highlight: "Playful multi-page scrapbook with custom animations",
     demoUrl: "",
     githubUrl: "https://github.com/Realmaryambano/Happy-Birthday-Dear-Shemaa",
-    image: "images/projects/birthday-site.jpg",
+    image: "public/images/birthday-site.jpg",
   },
   {
     id: "bu-clone",
@@ -200,7 +200,7 @@ const PROJECTS = [
     highlight: "Fully responsive, multi-page, zero frameworks",
     demoUrl: "https://bahriauniversityclone.netlify.app/",
     githubUrl: "https://github.com/Realmaryambano/Bahria-University-Website-Clone",
-    image: "images/bahria.png",
+    image: "public/images/bahria.png",
   },
 ];
 
