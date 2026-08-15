@@ -170,7 +170,7 @@ const PROJECTS = [
     highlight: "Private repo — details available on request",
     demoUrl: "",
     githubUrl: "https://github.com/Realmaryambano/all-versions-of-women",
-    image: "/images/women.png",
+    image: "images/women.png",
   },
   {
     id: "birthday-site",
@@ -185,7 +185,7 @@ const PROJECTS = [
     highlight: "Playful multi-page scrapbook with custom animations",
     demoUrl: "",
     githubUrl: "https://github.com/Realmaryambano/Happy-Birthday-Dear-Shemaa",
-    image: "/images/birthday.png",
+    image: "images/birthday.png",
   },
   {
     id: "bu-clone",
