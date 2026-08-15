@@ -309,7 +309,7 @@ const SOCIALS = [
   { label: "Phone", value: "+92 333 2119480", href: "tel:+923332119480", icon: Phone },
 ];
 
-const RESUME_HREF = "/resume.pdf"; // host Maryam_Bano_Resume.pdf here (e.g. Next.js /public folder) or swap for your hosted link
+const RESUME_HREF = "/Maryam_Bano_Resume.pdf"; // host Maryam_Bano_Resume.pdf here (e.g. Next.js /public folder) or swap for your hosted link
 
 /* ---------------------------------------------------------------------- */
 /* HOOKS                                                                   */
