@@ -345,7 +345,7 @@ const SOCIALS = [
 ];
 
 const RESUME_HREF = "/Maryam_Bano_Resume.pdf"; // host Maryam_Bano_Resume.pdf here (e.g. Next.js /public folder) or swap for your hosted link
-const CREATIVE_PORTFOLIO_HREF = "https://github.com/Realmaryambano/maryam-bano-creative-portfolio";
+const CREATIVE_PORTFOLIO_HREF = "https://maryam-bano-creative-portfolio.vercel.app/";
 
 /* ---------------------------------------------------------------------- */
 /* HOOKS                                                                   */
