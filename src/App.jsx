@@ -126,7 +126,7 @@ const RIT_EXPERIENCE_PROJECTS = [
     highlight: "Random Forest model trained on 8,558 student records, 24 features",
     demoUrl: "",
     githubUrl: "https://github.com/Realmaryambano/student-participation-engagement-prediction",
-    image: "/images/rit-data-analysis.png",
+    image: "/images/rit.png",
   },
 ];
 
