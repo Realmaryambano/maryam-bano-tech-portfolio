@@ -112,6 +112,24 @@ const EXPERIENCE_PROJECTS = [
   },
 ];
 
+const RIT_EXPERIENCE_PROJECTS = [
+  {
+    id: "student-engagement-prediction",
+    title: "Student Participation & Engagement Prediction",
+    tag: "Internship · RIT Tiger STRIPES / Excelerate",
+    accent: "violet",
+    icon: BarChart3,
+    blurb: "Predicting which students will actually show up for the next opportunity.",
+    description:
+      "A predictive analytics project built during a remote AI-Powered Data Analysis internship supported by Rochester Institute of Technology's Tiger STRIPES Program and powered by Excelerate. Using a preprocessed dataset of 8,558 student records across 24 features, I ran exploratory data analysis, cleaned and prepped the data, then trained a Random Forest Classifier to predict high vs. low student engagement. The model surfaced feature-importance rankings and participation probabilities, all pulled together into a full data-understanding report with confusion matrix, probability heatmap, and actionable recommendations for improving program participation.",
+    tech: ["Python", "Pandas", "NumPy", "Scikit-learn", "Random Forest", "Matplotlib/Seaborn", "EDA"],
+    highlight: "Random Forest model trained on 8,558 student records, 24 features",
+    demoUrl: "",
+    githubUrl: "https://github.com/Realmaryambano/AI%20Powered%20Data%20Analysis%20Remote%20Internship",
+    image: "/images/rit-data-analysis.png",
+  },
+];
+
 const PROJECTS = [
   {
     id: "mariame",
@@ -209,12 +227,29 @@ const EDUCATION = [
   { school: "Bahria College NORE 1, Karachi", degree: "Intermediate in Computer Science", period: "Sep 2021 — Jul 2023", note: "Position Holder" },
 ];
 
-const EXPERIENCE = {
-  company: "Bonanza Satrangi",
-  role: "IT Intern",
-  period: "Jul 2026 — Aug 2026",
-  description: "Worked on internal tools for complaint management and voucher reporting, using Flask and Oracle Database. Developed role-based dashboards and automated report generation.",
-};
+const EXPERIENCES = [
+  {
+    id: "rit-excelerate",
+    company: "RIT Tiger STRIPES Program · Excelerate",
+    role: "AI-Powered Data Analysis Intern",
+    period: "Jun 2026 — Jul 2026",
+    durationLabel: "1-month internship",
+    markerAccent: "violet",
+    description:
+      "A remote data analysis internship supported by Rochester Institute of Technology's Tiger STRIPES Program and powered by Excelerate. Analyzed 8,558 records of historical student participation data, ran exploratory data analysis and preprocessing, then built a Random Forest Classifier to predict future student engagement. Delivered a full data-understanding report covering feature importance, model performance, and practical recommendations for improving participation.",
+    projects: RIT_EXPERIENCE_PROJECTS,
+  },
+  {
+    id: "bonanza-satrangi",
+    company: "Bonanza Satrangi",
+    role: "IT Intern",
+    period: "Jul 2026 — Aug 2026",
+    durationLabel: "2-month internship",
+    markerAccent: "coral",
+    description: "Worked on internal tools for complaint management and voucher reporting, using Flask and Oracle Database. Developed role-based dashboards and automated report generation.",
+    projects: EXPERIENCE_PROJECTS,
+  },
+];
 
 const SKILLS = [
   { group: "Languages", items: ["Python", "C++","React", "JavaScript", "TypeScript", "Java", "HTML", "CSS", "Tailwind CSS"] },
@@ -310,6 +345,7 @@ const SOCIALS = [
 ];
 
 const RESUME_HREF = "/Maryam_Bano_Resume.pdf"; // host Maryam_Bano_Resume.pdf here (e.g. Next.js /public folder) or swap for your hosted link
+const CREATIVE_PORTFOLIO_HREF = "https://github.com/Realmaryambano/maryam-bano-creative-portfolio";
 
 /* ---------------------------------------------------------------------- */
 /* HOOKS                                                                   */
@@ -740,6 +776,15 @@ export default function Portfolio() {
                 <button className="btn btn--primary" onClick={() => scrollTo("projects")} {...hoverProps}>
                   See my work <ArrowUpRight size={16} />
                 </button>
+                <a
+                  className="btn btn--outline"
+                  href={CREATIVE_PORTFOLIO_HREF}
+                  target="_blank"
+                  rel="noreferrer"
+                  {...hoverProps}
+                >
+                  <Sparkles size={15} /> See my creative side
+                </a>
                 <a className="btn btn--gradient" href={RESUME_HREF} download {...hoverProps}>
                   <Download size={15} /> Download Resume
                 </a>
@@ -850,7 +895,15 @@ export default function Portfolio() {
 <p>
   Technology, however, is only one side of me. I’m also a novelist, writer,
   YouTuber, video editor, graphic designer, and vlogger. I love exploring
-  different forms of art and creativity.
+  different forms of art and creativity — you can see that side of me on my{" "}
+  <a
+    href={CREATIVE_PORTFOLIO_HREF}
+    target="_blank"
+    rel="noreferrer"
+    style={{ color: "var(--violet)", textDecoration: "underline" }}
+  >
+    creative portfolio
+  </a>.
 </p>
 
 <p>
@@ -897,73 +950,75 @@ export default function Portfolio() {
           <Reveal delay={90}><p className="section__sub">Hands-on internship work — shipping systems people at the company actually use.</p></Reveal>
 
           <div className="timeline" style={{ marginTop: 24 }}>
-            <Reveal>
-              <div className="timeline__row">
-                <div className="timeline__marker timeline__marker--coral"><Briefcase size={16} /></div>
-                <div className="timeline__content">
-                  <div className="timeline__top">
-                    <h4>{EXPERIENCE.role} · {EXPERIENCE.company}</h4>
-                    <span className="timeline__period">{EXPERIENCE.period}</span>
-                  </div>
-                  <p className="timeline__exp-desc">{EXPERIENCE.description}</p>
-                  <span className="pill pill--amber" style={{ marginBottom: 20, display: "inline-block" }}>2-month internship</span>
+            {EXPERIENCES.map((exp) => (
+              <Reveal key={exp.id}>
+                <div className="timeline__row">
+                  <div className={`timeline__marker timeline__marker--${exp.markerAccent}`}><Briefcase size={16} /></div>
+                  <div className="timeline__content">
+                    <div className="timeline__top">
+                      <h4>{exp.role} · {exp.company}</h4>
+                      <span className="timeline__period">{exp.period}</span>
+                    </div>
+                    <p className="timeline__exp-desc">{exp.description}</p>
+                    <span className="pill pill--amber" style={{ marginBottom: 20, display: "inline-block" }}>{exp.durationLabel}</span>
 
-                  <div className="projects-grid" style={{ marginTop: 4 }}>
-                    {EXPERIENCE_PROJECTS.map((proj, i) => {
-                      const Icon = proj.icon;
-                      return (
-                        <Reveal key={proj.id} delay={i * 90} className="reveal-card">
-                          <button
-                            className={`project-card accent-${proj.accent}`}
-                            onMouseMove={handleCardTilt}
-                            onMouseLeave={(e) => { resetTilt(e); setCursorHover(false); }}
-                            onMouseEnter={() => setCursorHover(true)}
-                            onClick={() => setActiveItem({ type: "project", data: proj })}
-                          >
-                            <div className="project-card__glow" />
-                            <div className="project-card__media">
-                              <ImageOrPlaceholder
-                                src={proj.image}
-                                alt={proj.title}
-                                icon={Icon}
-                                label={proj.tag}
-                                className="project-card__media-placeholder"
-                                imgClassName="project-card__media-img"
-                              />
-                              <span className="project-card__media-hint"><ArrowUpRight size={13} /> View project</span>
-                            </div>
-                            <div className="project-card__top">
-                              <span className="project-card__icon"><Icon size={22} /></span>
-                              <span className="project-card__tag">{proj.tag}</span>
-                            </div>
-                            <h3 className="project-card__title">{proj.title}</h3>
-                            <p className="project-card__blurb">{proj.blurb}</p>
-                            <div className="project-card__tags">
-                              {proj.tech.slice(0, 3).map((t, ti) => (
-                                <span key={t} className="mini-tag" style={{ transitionDelay: `${ti * 70 + 120}ms` }}>{t}</span>
-                              ))}
-                            </div>
-                            <div className="project-card__foot">
-                              <span
-                                className="project-card__open"
-                                onClick={(e) => openDemo(e, proj.githubUrl)}
-                                role="button"
-                                tabIndex={0}
-                              >
-                                <span>Open on GitHub</span><ArrowUpRight size={15} />
-                              </span>
-                              <span className="demo-pill demo-pill--disabled">
-                                <Play size={11} /> No live demo
-                              </span>
-                            </div>
-                          </button>
-                        </Reveal>
-                      );
-                    })}
+                    <div className="projects-grid" style={{ marginTop: 4 }}>
+                      {exp.projects.map((proj, i) => {
+                        const Icon = proj.icon;
+                        return (
+                          <Reveal key={proj.id} delay={i * 90} className="reveal-card">
+                            <button
+                              className={`project-card accent-${proj.accent}`}
+                              onMouseMove={handleCardTilt}
+                              onMouseLeave={(e) => { resetTilt(e); setCursorHover(false); }}
+                              onMouseEnter={() => setCursorHover(true)}
+                              onClick={() => setActiveItem({ type: "project", data: proj })}
+                            >
+                              <div className="project-card__glow" />
+                              <div className="project-card__media">
+                                <ImageOrPlaceholder
+                                  src={proj.image}
+                                  alt={proj.title}
+                                  icon={Icon}
+                                  label={proj.tag}
+                                  className="project-card__media-placeholder"
+                                  imgClassName="project-card__media-img"
+                                />
+                                <span className="project-card__media-hint"><ArrowUpRight size={13} /> View project</span>
+                              </div>
+                              <div className="project-card__top">
+                                <span className="project-card__icon"><Icon size={22} /></span>
+                                <span className="project-card__tag">{proj.tag}</span>
+                              </div>
+                              <h3 className="project-card__title">{proj.title}</h3>
+                              <p className="project-card__blurb">{proj.blurb}</p>
+                              <div className="project-card__tags">
+                                {proj.tech.slice(0, 3).map((t, ti) => (
+                                  <span key={t} className="mini-tag" style={{ transitionDelay: `${ti * 70 + 120}ms` }}>{t}</span>
+                                ))}
+                              </div>
+                              <div className="project-card__foot">
+                                <span
+                                  className="project-card__open"
+                                  onClick={(e) => openDemo(e, proj.githubUrl)}
+                                  role="button"
+                                  tabIndex={0}
+                                >
+                                  <span>Open on GitHub</span><ArrowUpRight size={15} />
+                                </span>
+                                <span className="demo-pill demo-pill--disabled">
+                                  <Play size={11} /> No live demo
+                                </span>
+                              </div>
+                            </button>
+                          </Reveal>
+                        );
+                      })}
+                    </div>
                   </div>
                 </div>
-              </div>
-            </Reveal>
+              </Reveal>
+            ))}
           </div>
         </section>
 
