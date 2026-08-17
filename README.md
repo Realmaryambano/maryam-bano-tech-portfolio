@@ -3,6 +3,8 @@
 A full-stack developer & AI/ML enthusiast portfolio — built to showcase real internship work, freelance projects, certifications, and technical skills in one animated, interactive site.
 
 **🔗 Live Demo:** [maryam-bano-tech-portfolio.vercel.app](https://maryam-bano-tech-portfolio.vercel.app/)
+
+
 **🎨 Creative Portfolio:** [github.com/Realmaryambano/maryam-bano-creative-portfolio](https://github.com/Realmaryambano/maryam-bano-creative-portfolio)
 
 <p align="center">
