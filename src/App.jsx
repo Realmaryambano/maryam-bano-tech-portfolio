@@ -125,7 +125,7 @@ const RIT_EXPERIENCE_PROJECTS = [
     tech: ["Python", "Pandas", "NumPy", "Scikit-learn", "Random Forest", "Matplotlib/Seaborn", "EDA"],
     highlight: "Random Forest model trained on 8,558 student records, 24 features",
     demoUrl: "",
-    githubUrl: "https://github.com/Realmaryambano/AI%20Powered%20Data%20Analysis%20Remote%20Internship",
+    githubUrl: "https://github.com/Realmaryambano/student-participation-engagement-prediction",
     image: "/images/rit-data-analysis.png",
   },
 ];
